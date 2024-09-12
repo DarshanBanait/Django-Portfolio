@@ -4,13 +4,13 @@
 
 {% block content %}
 <h2>My Projects</h2>
-<ul>
+<div class="projects-grid">
     {% for project in projects %}
-        <li>
+        <div class="project-box">
             <h3>{{ project.name }}</h3>
             <p><strong>Status:</strong> {{ project.status }}</p>
             <p><strong>Description:</strong> {{ project.details }}</p>
-        </li>
+        </div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}

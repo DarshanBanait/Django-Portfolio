@@ -7,12 +7,39 @@ body {
     min-height: 100vh;
 }
 
+/* Header container with glass effect */
 header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
+    display: inline-block; /* Fit the width to the content */
+    padding: 25px 40px; /* Padding around the header text */
+    text-align: center; /* Center text horizontally */
+    position: relative; /* Positioning for animations */
+    overflow: hidden; /* Ensure animations don’t overflow */
+    background: rgba(255, 255, 255, 0.2); /* Translucent background for glass effect */
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(223, 40, 40, 0.3); /* Floating effect */
+    margin: 10px auto; /* Center the header horizontally */
 }
+
+/* Styling for the header text */
+header h1 {
+    font-family: 'Spectral', serif; /* Fancy Google font */
+    font-size: 60px; /* Large, eye-catching font size */
+    font-weight: 700; /* Bold text */
+    color: #333; /* Dark color for text */
+    margin: 0; /* Remove default margin */
+    position: relative; /* Positioning for text animation */
+    animation: text-animation 3s ease infinite; /* Animation effect */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for text depth */
+}
+
+/* Text animation */
+@keyframes text-animation {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.7; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
 
 main {
     flex: 1;
@@ -21,22 +48,28 @@ main {
 
 .navbar {
     position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Translucent background for glass effect */
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Floating effect */
+    padding: 10px 20px;
+    display: inline-block;
     text-align: center;
-    padding: 10px 0;
 }
 
 .navbar a {
-    color: white;
+    color: #333333; /* Light gray color for better visibility */
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #f0a500;
+    color: #f0a500; /* Change to golden color on hover */
 }
 
 img {
@@ -44,3 +77,87 @@ img {
     width: 150px;
     height: 150px;
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    gap: 20px; /* Space between the project boxes */
+    margin-top: 20px;
+}
+
+.project-box {
+    background-color: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    backdrop-filter: blur(8px); /* Glass-like blur effect */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.project-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
+
+h2 {
+    display: inline-block;
+    background-color: #333; /* Dark background color for contrast */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding inside the title for space */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space between title and content */
+    font-family: 'Arial', sans-serif; /* Make sure it matches the overall font */
+    font-size: 24px; /* Make it stand out */
+    text-transform: uppercase; /* Optional: Transform text to uppercase for a modern feel */
+}
+
+h2:before, h2:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #f0a500; /* Accent color (matches hover for links) */
+    margin: 0 auto 10px; /* Center and space it nicely */
+}
+
+section {
+    margin-bottom: 40px; /* Space between sections */
+}
+
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 20px auto; /* Center the image */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+#about-me p, #my-education p, #my-tech-stack p, #my-hobbies p, #my-projects p, #my-goals p {
+    line-height: 1.6;
+    color: #333; /* Make the text easier to read */
+    font-size: 16px;
+}
+
