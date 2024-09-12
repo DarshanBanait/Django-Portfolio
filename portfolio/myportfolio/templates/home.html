@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Darshan's Portfolio{% endblock %}
+
+{% block content %}
+<section id="about">
+    <img src="{% static 'images/passport-photo.png' %}" alt="My photo" />
+    <h2>Hi, I'm Darshan</h2>
+    <p><strong>Who I Am:</strong> A passionate computer science student.</p>
+    <p><strong>Education:</strong> Currently pursuing a degree in Computer Science.</p>
+    <p><strong>Skills:</strong> Django, Python, Machine Learning, and more.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Projects | Darshan's Portfolio{% endblock %}
+
+{% block content %}
+<h2>My Projects</h2>
+<ul>
+    {% for project in projects %}
+        <li>
+            <h3>{{ project.name }}</h3>
+            <p><strong>Status:</strong> {{ project.status }}</p>
+            <p><strong>Description:</strong> {{ project.details }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

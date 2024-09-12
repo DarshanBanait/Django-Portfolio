@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Darshan's Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Welcome to Darshan's Portfolio{% endblock %}</h1>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Fixed bottom navbar -->
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'documents' %}">Documents</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </div>
+</body>
+</html>
