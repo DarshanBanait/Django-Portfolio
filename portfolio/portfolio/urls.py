@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # This makes the root URL ('/') go to the home page
     path('projects/', views.projects, name='projects'),
+    path('projects/<int:project_id>/', views.project_detail, name='project_detail'),
     path('documents/', views.documents, name='documents'),
     path('contact/', views.contact, name='contact'),
 ]
